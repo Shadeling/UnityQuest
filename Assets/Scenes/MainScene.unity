@@ -149,7 +149,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.9150943, g: 0.8716311, b: 0.2978373, a: 1}
+  m_Color: {r: 0.9019608, g: 0.9019608, b: 0.27450982, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -189,7 +189,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 2
+  m_Lightmapping: 4
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -449,6 +449,7 @@ MonoBehaviour:
   maxDownVelosity: 20
   jumpForce: 7
   sprintAcceleration: 1.5
+  LockCursor: 0
 --- !u!4 &2501104847089869280
 Transform:
   m_ObjectHideFlags: 0
@@ -474,6 +475,7 @@ GameObject:
   - component: {fileID: 2501104847089869280}
   - component: {fileID: 2501104847089869287}
   - component: {fileID: 2501104847089869286}
+  - component: {fileID: 2501104847089869288}
   m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -532,6 +534,37 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &2501104847089869288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2501104847089869285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &3770552285408808679
 GameObject:
   m_ObjectHideFlags: 0
@@ -546,6 +579,7 @@ GameObject:
   - component: {fileID: 3770552285408808684}
   - component: {fileID: 3770552285408808680}
   - component: {fileID: 3770552285408808681}
+  - component: {fileID: 3770552285408808682}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -580,6 +614,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62d41c811784e740a7cd57c38a36adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3770552285408808682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3770552285408808679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 890245104ae0d26419b898257bbc88d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sky: {fileID: 705507994}
+  IntensityMult: 2
 --- !u!82 &3770552285408808684
 AudioSource:
   m_ObjectHideFlags: 0

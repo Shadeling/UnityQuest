@@ -30,6 +30,8 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Ускорение при нажатом Shift")]
     public float sprintAcceleration = 1.5f;
 
+    public bool LockCursor = true;
+
     public UnityAction<float> GravityChanged;
     public UnityAction escButtonDown;
 
@@ -46,8 +48,8 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         Time.timeScale = 1;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        Cursor.lockState = LockCursor? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = !LockCursor;
         _characterController = GetComponent<CharacterController>();
         _playerCamera = GetComponentInChildren<Camera>();
     }
@@ -70,7 +72,8 @@ public class PlayerController : MonoBehaviour
 
     public bool CanProcessInput()
     {
-        return Cursor.lockState == CursorLockMode.Locked;
+        //return Cursor.lockState == CursorLockMode.Locked;
+        return true;
     }
 
     private void CharacterMove()

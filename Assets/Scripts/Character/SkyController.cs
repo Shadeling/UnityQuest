@@ -32,7 +32,6 @@ public class SkyController : MonoBehaviour
         GUILayout.EndArea();
 
         sky.color = new Color(R/255, G/255, B/255, A);
-        //sky.intensity = IntensityMult / (R + G + B) + 0.01f;
     }
 
 
